@@ -1,5 +1,5 @@
 ﻿# Handwriting Recognition
-Example Unity project using point-based gesture recognition using [PDollar](https://depts.washington.edu/acelab/proj/dollar/pdollar.html). Within this demo, you can draw a numeric value, and if detected, it is converted into a character and displayed within a label.
+Example Unity project using point-based gesture recognition using [PDollar](https://depts.washington.edu/acelab/proj/dollar/pdollar.html). Within this demo, you can draw a numeric value and it will detect the character, providing a confidence score.
 
 ![Demo](https://i.ibb.co/qF9fjs0/hr1-git.gif)
 ## Features
@@ -47,6 +47,20 @@ After you have created new gestures, you should move the xml files from persiste
 
     Gesture /Users/.../C-132604898816961460.xml detected in persistentDataPath. Move to resources if required.
 
+**Example XML File:**
+```
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Gesture Name = "0">
+	<Stroke>
+		<Point X = "1597" Y = "-629" T = "0" Pressure = "0" />
+		<Point X = "1580" Y = "-614" T = "0" Pressure = "0" />
+		<Point X = "1569" Y = "-594" T = "0" Pressure = "0" />
+		<Point X = "1563" Y = "-570" T = "0" Pressure = "0" />
+		...
+	</Stroke>
+</Gesture>
+```
+
 # Configuration
 You can configure the defaults within GestureRecogniser.cs. As an example:
 
@@ -58,7 +72,7 @@ You can configure the defaults within GestureRecogniser.cs. As an example:
 
 
 # Future improvements
- - Save and Load gestures to remote server
- - customisable save location
+ - Save and load gestures to a remote server
+ - Customisable save locations
  - Extend event listeners 
 
